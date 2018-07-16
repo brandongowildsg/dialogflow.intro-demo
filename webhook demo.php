@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 $method = $_SERVER['REQUEST_METHOD'];
 
@@ -19,13 +19,13 @@ if($method == 'POST'){
 			break;
 
 		default:
-			$speech = "Sorry, I didn't get that. Please ask me something else";
+			$speech = "Sorry, I didnt get that. Please ask me something else.";
 			break;
 	}
 
 	$response = new \stdClass();
-	$response->speech = "";
-	$response->displayText = "";
+	$response->speech = $speech;
+	$response->displayText = $speech;
 	$response->source = "webhook";
 	echo json_encode($response);
 }
